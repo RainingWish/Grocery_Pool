@@ -1,0 +1,7 @@
+{
+  "name": "Grocery_Pool",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
