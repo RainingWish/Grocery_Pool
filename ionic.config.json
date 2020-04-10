@@ -1,7 +1,7 @@
 {
   "name": "Grocery_Pool",
   "integrations": {
-    "capacitor": {}
+    "cordova": {}
   },
   "type": "angular"
 }

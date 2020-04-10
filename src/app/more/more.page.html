@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>More Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="auth-form">
+  <div *ngIf="notLogin">
+      <ion-grid>
+        <ion-row>
+          <ion-col align-self-center>
+            <ion-button [routerLink]="['/register']" expand="block" color="primary">Register</ion-button>
+
+            <span class="divider line one-line">or</span>
+
+            <span class="already">Already a user?</span>
+
+            <ion-button [routerLink]="['/login']" expand="block" color="danger">Sign In</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </div>
+
+  <div *ngIf="Logined">
+    Already Login
+  </div>
+</ion-content>

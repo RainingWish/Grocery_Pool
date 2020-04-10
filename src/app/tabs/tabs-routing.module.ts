@@ -8,45 +8,65 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'tabHome',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+              import('../home/home.module').then(m => m.HomePageModule)
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'tabSearch',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+              import('../search/search.module').then(m => m.SearchPageModule)
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'tabMassage',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+              import('../massage/massage.module').then(m => m.MassagePageModule)
+          }
+        ]
+      },
+      {
+        path: 'tabNotification',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../notification/notification.module').then(m => m.NotificationPageModule)
+          }
+        ]
+      },
+      {
+        path: 'tabMore',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../more/more.module').then(m => m.MorePageModule)
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/tabHome',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/tabHome',
     pathMatch: 'full'
   }
 ];
