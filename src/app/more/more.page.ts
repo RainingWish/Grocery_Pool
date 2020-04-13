@@ -31,7 +31,6 @@ export class MorePage {
         this.notLogin = true;
       }
     });
-
   }
 
 }
