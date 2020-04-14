@@ -1,12 +1,5 @@
-@import url(../theme.scss);
-
-p,
-ion-label,
-ion-item,
-ion-icon,
-ion-title,
-button {
-  color: var(--darkToLight) !important;
+.UserId {
+    margin-top: 10px;
 }
 
 .divider {
@@ -49,19 +42,3 @@ button {
     text-align: center;
     padding-bottom: 10px;
 }
-
-.UserId {
-    margin-top: 10px;
-}
-
-.myGp {
-    margin-top: 20px;
-}
-.Setting {
-    margin-top: 20px;
-}
-
-.header {
-    margin-bottom: 5px;
-}
-
