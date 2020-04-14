@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>User Center</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item button (click)="testClick()" class="UserId">
+      <ion-avatar slot="start">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+      </ion-avatar>
+      <ion-label>
+        Change your avatar
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <form class="UserId">
+    <ion-item lines="full">
+      <ion-label>User ID</ion-label>
+      <ion-input type="ID" required placeholder="Current ID"></ion-input>
+    </ion-item>
+  </form>
+
+  <ion-grid class="auth-form" class="UserId">
+    <ion-row>
+      <ion-col align-self-center>
+        <ion-button (click)="testClick()" expand="block" color="primary">Save and back</ion-button>
+
+        <ion-button (click)="testClick()" expand="block" color="danger" class="UserId">Log out</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
