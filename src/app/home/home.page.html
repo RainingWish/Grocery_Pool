@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>Home</ion-title>
   </ion-toolbar>
@@ -24,6 +24,36 @@
       </ion-label>
       <ion-badge slot="end">{{lng}}</ion-badge>
     </ion-item>
+
+
+
+
+
     </ion-list>
 
+</ion-content> -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>User List</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/create">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card
+    *ngFor="let user of userList | async"
+    routerLink="/detail/{{user.id}}"
+  >
+    <ion-card-header>
+      {{ user.userName }}
+    </ion-card-header>
+    <ion-card-content>
+      location: {{ user.location }}
+    </ion-card-content>
+  </ion-card>
 </ion-content>

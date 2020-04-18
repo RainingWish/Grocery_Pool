@@ -13,6 +13,12 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -21,7 +27,10 @@ import { IonicStorageModule } from '@ionic/storage';
     HttpClientModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    IonicStorageModule.forRoot()],
+    IonicStorageModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+  ],
   providers: [
     StatusBar,
     SplashScreen,

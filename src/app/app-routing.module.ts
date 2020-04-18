@@ -33,13 +33,23 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },  {
+  },
+  {
     path: 'forget-password',
     loadChildren: () => import('./forget-password/forget-password.module').then( m => m.ForgetPasswordPageModule)
+  },
+  {
+    path: 'create',
+    loadChildren: './user_pages/create/create.module#CreatePageModule'
+  },
+  {
+    path: 'detail',
+    loadChildren: './user_pages/detail/detail.module#DetailPageModule'
+  },
+  { 
+    path: 'detail/:id',
+    loadChildren: './user_pages/detail/detail.module#DetailPageModule'
   }
-
-
-
 
 ];
 @NgModule({

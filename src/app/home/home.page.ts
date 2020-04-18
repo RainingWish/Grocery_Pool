@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LoadingController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
+import {  OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { User } from '../models/user.interface';
+import { FirestoreService } from '../services/data/firestore.service';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-home',
@@ -11,10 +16,16 @@ import { AlertController } from '@ionic/angular';
 export class HomePage {
   lat: any = '';
   lng: any = '';
-  constructor(private geolocation: Geolocation, public loadingController: LoadingController, public alertController: AlertController) {
-
+  public userList;
+  constructor(private geolocation: Geolocation, public loadingController: LoadingController, public alertController: AlertController,
+    private firestoreService: FirestoreService,
+    private router: Router
+    ) {
   }
-
+  ngOnInit() {
+    this.userList = this.firestoreService.getUserList().valueChanges();
+    console.log(this.userList);
+  }
   async getLoc() {
     const loading = await this.loadingController.create({
       message: 'Please wait...',
@@ -33,6 +44,8 @@ export class HomePage {
       loading.dismiss();
       this.showLoader('Error getting location - ' + JSON.stringify(error));
     });
+    console.info("here!!!");
+    console.info(this.userList);
   }
 
 
@@ -44,6 +57,7 @@ export class HomePage {
 
     await alert.present();
   }
+
 
 
 

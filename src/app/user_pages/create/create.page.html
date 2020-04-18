@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>create</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- 
+export interface User {
+  id: string;
+  email:string;
+  username: string;
+  location:Geolocation;
+} -->
+
+<ion-content>
+  <ion-content padding>
+    <form [formGroup]="createUserForm" (submit)="createUser()">
+      <ion-item>
+        <ion-label stacked>User Name</ion-label>
+        <ion-input
+          formControlName="userName"
+          type="string"
+          placeholder="What's this user called?"
+        >
+        </ion-input>
+      </ion-item>
+  
+ 
+  
+      <ion-item>
+        <ion-label stacked>email</ion-label>
+        <ion-input
+          formControlName="email"
+          type="string"
+          placeholder="what is ur email address?"
+        >
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>location</ion-label>
+        <ion-input
+          formControlName="location"
+          type="Geolocation"
+          placeholder="Where are you?"
+        >
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>title</ion-label>
+        <ion-input
+          formControlName="title"
+          type="string"
+          placeholder="Your post title"
+        >
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Description</ion-label>
+        <ion-textarea
+          formControlName="description"
+          type="text"
+          placeholder="What's this post about?"
+        >
+        </ion-textarea>
+      </ion-item>
+
+
+      <ion-button expand="block" type="submit" [disabled]="!createUserForm.valid">
+        Add user
+      </ion-button>
+    </form>
+  </ion-content>
+</ion-content>

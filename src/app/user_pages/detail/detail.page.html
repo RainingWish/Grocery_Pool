@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ (user | async)?.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label>
+      poster name
+    </ion-label>
+      <p>          
+        {{ (user | async)?.userName }}
+      </p>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      poster email
+    </ion-label>
+      <p>          
+        {{ (user | async)?.email }}
+      </p>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Titile
+    </ion-label>
+    <p>   
+        {{ (user | async)?.title }} 
+    </p>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Description
+    </ion-label>
+      <p>          
+        {{ (user | async)?.description }}
+      </p>
+  </ion-item>
+
+
+
+</ion-content>
+
+
