@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Create a new post</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item lines="full">
+      <ion-label>Want to sell or buy?</ion-label>
+      <ion-select placeholder="Select One">
+        <ion-select-option value="Sell">Delivery</ion-select-option>
+        <ion-select-option value="Buy">Buy</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Post Title</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Post Detail</ion-label>
+      <ion-textarea type="text" rows="5"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" color="primary" expand="block" (click)="post()">Post</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

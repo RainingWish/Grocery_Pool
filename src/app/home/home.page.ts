@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LoadingController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
-import {  OnInit } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../models/user.interface';
 import { FirestoreService } from '../services/data/firestore.service';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +20,7 @@ export class HomePage {
   constructor(private geolocation: Geolocation, public loadingController: LoadingController, public alertController: AlertController,
     private firestoreService: FirestoreService,
     private router: Router
-    ) {
+  ) {
   }
   ngOnInit() {
     this.userList = this.firestoreService.getUserList().valueChanges();

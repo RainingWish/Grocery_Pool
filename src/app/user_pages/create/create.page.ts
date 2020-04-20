@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoadingController, AlertController } from '@ionic/angular';
-import { FirestoreService } from '../../services/data/firestore.service'
-import { Router } from '@angular/router'; 
-import { Observable } from 'rxjs';
+import { FirestoreService } from '../../services/data/firestore.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -19,7 +18,7 @@ export class CreatePage implements OnInit {
     public firestoreService: FirestoreService,
     formBuilder: FormBuilder,
     private router: Router
-  ) { 
+  ) {
     this.createUserForm = formBuilder.group({
       userName: ['', Validators.required],
       email: ['', Validators.required],
@@ -34,7 +33,6 @@ export class CreatePage implements OnInit {
   }
   async createUser() {
     const loading = await this.loadingCtrl.create();
-  
     const userName = this.createUserForm.value.userName;
     const email = this.createUserForm.value.email;
     const location = this.createUserForm.value.location;
@@ -42,9 +40,9 @@ export class CreatePage implements OnInit {
     const description = this.createUserForm.value.description;
     console.log(email);
     console.log(title);
-    console.log(description);  
+    console.log(description);
     this.firestoreService
-      .createUser(userName, email, location,title, description)
+      .createUser(userName, email, location, title, description)
       .then(
         () => {
           loading.dismiss().then(() => {
@@ -55,7 +53,7 @@ export class CreatePage implements OnInit {
           console.error(error);
         }
       );
-    }
+  }
 
 
 

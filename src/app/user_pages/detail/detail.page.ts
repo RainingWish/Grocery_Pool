@@ -13,10 +13,11 @@ export class DetailPage implements OnInit {
   constructor(
     private firestoreService: FirestoreService,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit() {
     const userId: string = this.route.snapshot.paramMap.get('id');
+    console.log(userId);
     this.user = this.firestoreService.getUserDetail(userId).valueChanges();
   }
 }
